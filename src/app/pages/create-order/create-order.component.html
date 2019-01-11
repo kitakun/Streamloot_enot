@@ -1,0 +1,71 @@
+<div class="create-order" [class.in-loading]='inLoading'>
+  <div class="order-scroll" *ngIf='showForm' style="
+    margin-top: 140px;
+    border-image-slice: 160;
+    border-image-width: 70px;
+    border-image-outset: 7;">
+    <h3 class="text">ЗАПОЛНИТЕ ФОРМУ</h3>
+    <hr />
+
+    <div class="inline full">
+      <span class="text min">ФИО:</span>
+      <input [(ngModel)]='model.FullName' class="input-field full" type="text" placeholder="Введите ФИО..." />
+    </div>
+
+    <h4 class="text">ПОЛНЫЙ АДРЕС:</h4>
+
+    <div class="inline full">
+      <span class="text min">Страна:</span>
+      <input [(ngModel)]='model.Address.Country' class="input-field full" type="text" placeholder="Введите страну..." />
+    </div>
+
+    <div class="inline full">
+      <span class="text min">Область:</span>
+      <input [(ngModel)]='model.Address.State' class="input-field full" type="text" placeholder="Введите Область..." />
+    </div>
+
+    <div class="inline full">
+      <span class="text min">Город:</span>
+      <input [(ngModel)]='model.Address.City' class="input-field full" type="text" placeholder="Введите Город..." />
+    </div>
+
+    <div class="inline full">
+      <span class="text min">Улица:</span>
+      <input [(ngModel)]='addrStreet' (change)="updateAddress()" class="input-field" type="text" placeholder="Введите  Улицу..." />
+      <span class="text min">Индекс:</span>
+      <input [(ngModel)]='model.Address.ZipCode' class="input-field" type="text" placeholder="Введите Индекс..." />
+    </div>
+
+    <div class="inline full">
+      <span class="text min">Дом:</span>
+      <input [(ngModel)]='addrHome' (change)="updateAddress()" class="input-field" type="text" placeholder="Введите номер дома..." />
+      <span class="text min">Квартира:</span>
+      <input [(ngModel)]='addrApartament' (change)="updateAddress()" class="input-field" type="text" placeholder="Введите номер квартиры..." />
+    </div>
+
+    <h4 class="text telephon-header">НОМЕР ТЕЛЕФОНА:</h4>
+
+    <input [(ngModel)]='model.Telephone' class="input-field full" type="text" maxlength="18" placeholder="+7 900 800 70 60" />
+
+    <h4 class="text">КОММЕНТАРИЙ:</h4>
+
+    <textarea [(ngModel)]='model.Comment' class="input-field full" placeholder="Пожелания по заказу/доставке">
+    </textarea>
+
+    <div class="seal"></div>
+    <div class="accept">
+      <input type="button" (click)='Push()' />
+    </div>
+  </div>
+
+  <div class="order-scroll" *ngIf='!showForm' style="
+  margin-top: 140px;
+  border-image-slice: 160;
+  border-image-width: 70px;
+  border-image-outset: 7;">
+    <h2 class="cart-font">Заказ оформлен!</h2>
+    <p class="text center">Сейчас вы перейдете на страницу оплаты...</p>
+    <div class="seal"></div>
+  </div>
+
+</div>

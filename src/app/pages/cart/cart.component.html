@@ -1,0 +1,97 @@
+<div class="cart-holder">
+    <div class="cart-header" style="
+    border-image-slice: 14;
+    border-image-width: 17px;">
+        <div>
+            <p class="cart-font text-center">Оплата</p>
+        </div>
+    </div>
+    <div class="cart-panel" style="
+    border-image-slice: 70;
+    border-image-width: 70px;
+    border-image-outset: 2;">
+        <!-- <div class="top"></div> -->
+        <div class="middle-content" *ngIf="CartItems.length > 0" style="
+            border-image-slice: 70;
+            border-image-width: 50px;
+            border-image-outset: 0;">
+            <div *ngFor="let item of CartItems; let i = index" class="item-container" style="border-image-slice: 30; border-image-width: 15px;">
+                <div class="content">
+                    <table>
+                        <tr>
+                            <td>
+                                <span class="cart-font inline">{{item.item.Name}}</span>
+                            </td>
+                            <td rowspan="2">
+                                <button (click)="delete(item)" class="cancel-btn"></button>
+                                <button (click)="setup(item)" class="setup-btn"></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="text">Цена: {{item.item.Price}}р</span>
+                            </td>
+                        </tr>
+                    </table>
+                    <div *ngIf="hasAttrs(item.item)" class="smaller">
+                        <hr />
+                        <div *ngFor="let product of item.item.Items">
+                            <div *ngFor="let attrItem of product.Attributes" class="text">
+                                {{product.Name}} {{localize(attrItem)}} {{attrItem.Selected}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom">
+                <button class="slice" (click)="Proceed()" style="border-image-slice: 18;
+                    border-image-width: 10px;
+                    border-image-outset: 1;">
+                    <p class="cart-font">КУПИТЬ</p>
+                    <p class="cart-font">{{TotalPrice}}p</p>
+                </button>
+            </div>
+        </div>
+        <div class="middle-content" *ngIf="CartItems.length == 0">
+            <div class="no-items">
+                <h3 class="cart-font">У вас нет товаров в корзине</h3>
+                <button class="back-to-home" routerLink="/home">Может быть что-нибудь выбрать?</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="gray-panel">
+        <p class="cart-font text-center">Стоимость доставки не включена в стоимость</p>
+        <p class="cart-font text-center">Стоимость можно узнать в
+            <a class="cart-font" [routerLink]="['/delivery']">Доставке</a>
+        </p>
+    </div>
+
+</div>
+
+
+<!-- select size modal -->
+<es-modal id='select-attrs' width='700'>
+    <items-scroll>
+        <div class="chose-attrs-modal">
+            <h2 class="text text-center">Доп параметры</h2>
+            <div *ngIf='proceededToCartProduct && proceededToCartProduct.length'>
+                <es-product-select-attribute *ngFor='let prod of proceededToCartProduct' [product]='prod' [morze]='attrsChoserMorze'>
+                </es-product-select-attribute>
+            </div>
+
+            <div class="modal-bottom">
+                <button class="slice" (click)="cancelAttrs()" style="border-image-slice: 18;
+                                                border-image-width: 10px;
+                                                border-image-outset: 1;">
+                    <p class="cart-font">Отменить</p>
+                </button>
+                <button class="slice" (click)="acceptAttrs()" style="border-image-slice: 18;
+                                border-image-width: 10px;
+                                border-image-outset: 1;">
+                    <p class="cart-font">Сохранить</p>
+                </button>
+            </div>
+        </div>
+    </items-scroll>
+</es-modal>

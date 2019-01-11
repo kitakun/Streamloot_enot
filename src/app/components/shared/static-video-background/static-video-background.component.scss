@@ -1,0 +1,24 @@
+
+.holder{
+    position: absolute;
+    z-index: -99;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    
+    video{
+        opacity: 1;
+        transition: opacity 1s ease-in-out;
+        position: fixed;
+        z-index: -100;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        min-width: 100%; 
+        min-height: 100%;
+    }
+}

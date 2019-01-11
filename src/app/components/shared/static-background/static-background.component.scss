@@ -1,0 +1,21 @@
+div{
+    &:active {
+		cursor: url('../../../../assets/utls/cursor.png') 10 2, auto;
+	}
+	&:after {
+		background-color: #000;
+		background-image: url('../../../../assets/background.png');
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		content: '';
+		bottom: 0;
+		left: 0;
+		opacity: 1;
+		position: fixed;
+		right: 0;
+		top: 0;
+		will-change: transform;	
+		z-index: -2;
+	}
+}

@@ -1,0 +1,80 @@
+.attribute-selector {
+    width:100%;
+
+    .control{
+        padding: 5px;
+        width:100%;
+    }
+
+    //devide in future by types
+    .size-chooser{
+        display: table;
+        width: 100%;
+        border: 1px solid gray;
+        padding: 2px;
+        border-radius: 4px;
+        
+        &.invalid{
+            border: 1px solid #ff6868;
+            background-color: #eb4d4d26;
+        }
+
+        @mixin tc {
+            display: table-cell;
+            vertical-align: top;
+        }
+        .preview{
+            @include tc();
+            width: 100px;
+            img{
+                width: 100%;
+            }
+        }
+        .content{
+            @include tc();
+
+            .size-radio{
+                display: inline-block;
+
+                input[type="radio"] {
+                    width: 50px;
+                    height: 30px;
+                    border-radius: 15px;
+                    border: 2px solid #1FBED6;
+                    background-color: white;
+                    -webkit-appearance: none; /*to disable the default appearance of radio button*/
+                    -moz-appearance: none;
+
+                    &:focus { /*no need, if you don't disable default appearance*/
+                        outline-color: transparent; /*to remove the square border on focus*/
+                    }
+                    &:checked { /*no need, if you don't disable default appearance*/
+                        background-color: #1FBED6;
+                    }
+                    &:checked ~ div:first-of-type {
+                        color: white;
+                    }
+                }
+                div {
+                    &:first-of-type {
+                        display: inline;
+                        position: relative;
+                        left: -41px;
+                        top: -10px;
+                        text-align: center;
+                        font-size: 15px;
+                        color: #1FBED6;
+                    }
+                }
+            }
+
+            p{
+                margin: 5px;
+            }
+            span{
+                font-size: 14px;
+            }
+        }
+    }
+
+}

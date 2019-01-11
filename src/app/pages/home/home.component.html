@@ -1,0 +1,54 @@
+<div class="home">
+    <!-- <hover-parallax></hover-parallax> -->
+
+    <div class="arrows">
+        <button (click)="clickLeft()" class="btn-carousel-left">&nbsp;</button>
+        <button (click)="clickRight()" class="btn-carousel-right">&nbsp;</button>
+    </div>
+
+    <div *ngIf="slides.length" class="content-center chests-panel">
+        <carousel #carousel [slides]="slides" [options]="options" [onSlideChange]="onSlideChanges()" [onBeforeChange]="onStartSlideChange()">
+            <carousel-slide *ngFor="let slide of slides; let i = index" (click)="slideClicked(i)">
+                <div [ngSwitch]="slide.RenderType" class="full" [class.active]='slide.Active'>
+                    <chest-legend *ngSwitchCase="'legend'" [slide]="slide"></chest-legend>
+                    <chest-myth *ngSwitchCase="'epic'" [slide]="slide"></chest-myth>
+                    <img *ngSwitchDefault (mouseover)="hover(true)" (mouseout)="hover()" class="chest slide-img" src="{{slide.ImageSrc}}"
+                        alt="" />
+                </div>
+            </carousel-slide>
+        </carousel>
+    </div>
+
+    <div>
+        <div class="content-center fixed-panel text">
+            {{box ? box.Name : '~'}}
+        </div>
+    </div>
+
+    <div class='content-center text' *ngIf="box != null">
+        <home-smooth-panel [curItem]="box" [proceedFunc]='addToCartClickBinded'>
+        </home-smooth-panel>
+    </div>
+</div>
+
+<!-- select size modal -->
+<es-modal id='select-attrs' width='700'>
+    <items-scroll>
+        <div class="chose-attrs-modal">
+            <h2 class="text text-center">Доп параметры</h2>
+            <div *ngIf='proceededToCartProduct && proceededToCartProduct.Items.length'>
+                <es-product-select-attribute *ngFor='let prod of proceededToCartProduct.Items' 
+                    [product]='prod' 
+                    [morze]='attrsChoserMorze'></es-product-select-attribute>
+            </div>
+
+            <div class="modal-bottom">
+                <button class="slice" (click)="proceedCartItem()" style="border-image-slice: 18;
+                            border-image-width: 10px;
+                            border-image-outset: 1;">
+                    <p class="cart-font">Продолжить</p>
+                </button>
+            </div>
+        </div>
+    </items-scroll>
+</es-modal>

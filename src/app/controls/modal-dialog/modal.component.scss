@@ -1,0 +1,55 @@
+.modal{
+    display: block;
+    z-index: 10000;
+    position: fixed;
+    left: -200px;
+    top: -10px;
+    right: -200px;
+    bottom: -10px;
+    //overflow: auto;
+    margin: 10px;
+    
+    opacity: 0;
+    transition: 0.3s cubic-bezier(0.215, 0.610, 0.355, 1) all; 
+    transform: scale(0.8);
+
+    @mixin show(){
+        opacity: 1;
+        transform: scale(1);
+        pointer-events: all !important;
+    }
+    &.visible{
+        @include show();
+        background-color: #1122337c;
+    }
+    &.hide{
+        transform: scale(0.8);
+        pointer-events: none;
+        opacity: 0;
+    }
+
+    .inner {
+        max-width: 600px; /* just for example */
+        
+        margin: 0 auto;
+        opacity: 1;
+
+        &-panel{
+            @extend .modal;
+            opacity: 1;
+            width: 400px;
+            min-height: 300px;
+            height: calc(100% - 100px);
+            background-color: white;
+            margin: 0 auto;
+            top: 50%;
+            transform: translateY(-50%);
+
+            &.visible{
+                @include show();
+                pointer-events: all !important;
+            }
+        }
+
+    }
+}

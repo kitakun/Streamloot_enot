@@ -1,0 +1,8 @@
+{
+    "files.exclude": {
+        "**/*.css": true,
+        "**/*.min.css": true,
+        "node_modules": true,
+        "e2e": true
+    }
+}

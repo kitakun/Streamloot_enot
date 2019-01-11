@@ -1,0 +1,74 @@
+@import url('../../assets/fonts/beh/stylesheet.scss');
+
+.btn {
+    font-family: 'Benguiat Rus Bold', arial;
+    font-size: 27px;
+    position: relative;
+    color: rgb(68, 41, 15);
+    background-color: transparent;
+    border: 0px;
+    font-weight: bold;
+    transition: all 0.1s ease;
+    top: 0px;
+
+    border-left: 1px solid rgb(167, 108, 61);
+    border-right: 1px solid rgb(167, 108, 61);
+
+    &:active {
+        background-color: rgb(190, 130, 80);
+        color: rgb(62, 45, 56);
+        top: 2px;
+    }
+}
+
+.slice{
+    transition: transform 0.2s ease-in-out;
+    transform: scale(1);
+
+    padding: 1px;
+    border: 10px solid transparent;
+    background-color: #201b20 !important;
+    border-image: url('../../assets/panel2/btn.png') round;
+
+    p{
+        margin: 0;
+        text-align: center;
+        &:last-child{
+            margin-top: 2px;
+        }
+    }
+
+    &:active{
+        transform: scale(0.95);
+    }
+}
+
+.btn-carousel{
+    width: 143px;
+    height: 133px;
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    margin:20px;
+    transition: all 0.1s ease;
+    z-index: 100;
+    transform: scale(1);
+    &:active{
+        transform: scale(0.95);
+    }
+}
+
+.btn-carousel{
+    &-right{
+        @extend .btn-carousel;
+        background-image: url('../../assets/chests/rightArrow.png');
+        right: 20px;
+    }
+    &-left{
+        @extend .btn-carousel;
+        background-image: url('../../assets/chests/leftArrow.png');
+        left: 20px;
+    }
+}

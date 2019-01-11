@@ -1,0 +1,24 @@
+.alerts{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 200px;
+    z-index: 200;
+    pointer-events: none;
+
+    .alert{
+        position: fixed;
+        margin: 0 auto;
+        text-align: center;
+        background-color: #252525c9;
+        padding: 20px;
+        transition: 1s top cubic-bezier(0.075, 0.82, 0.165, 1);
+        top: -140px;
+        pointer-events: none;
+
+        &.pop{
+            top: 140px;
+        }
+    }
+}

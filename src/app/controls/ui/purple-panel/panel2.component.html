@@ -1,0 +1,20 @@
+<div class="holder" [ngClass]="{'hide':hide, 'smoothShowing' : smoothShowing || false, 'show':show}">
+    <!-- <div class="header" style="
+      border-image-slice: 13;
+      border-image-width: 10px;">
+      <div>
+        <p class="cart-font">Оплата</p>
+      </div>
+    </div> -->
+    <div class="panel" style="
+      border-image-slice: 70;
+      border-image-width: 70px;
+      border-image-outset: 2;">
+      <div class="middle-content" 
+      style=" border-image-slice: 70;
+      border-image-width: 50px;
+      border-image-outset: 0;">
+          <ng-content></ng-content>
+      </div>
+    </div>
+  </div>

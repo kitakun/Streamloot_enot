@@ -1,0 +1,48 @@
+@import url('../../assets/fonts/beh/stylesheet.scss');
+
+.text{
+    font-family: 'Benguiat Rus Bold', arial;
+    //font-size: 27px;
+    position: relative;
+    color: rgb(68, 41, 15);
+    background-color: transparent;
+    border: 0px;
+    font-weight: bold;
+    &p{
+        margin: 0;
+    }
+}
+
+$gradient-main-color: #ffdd41;
+@mixin gradient-font{
+    background: linear-gradient(45deg, $gradient-main-color 100%, #a88448);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.cart-font{
+    @extend .text;
+    @media screen and (-webkit-min-device-pixel-ratio:0) {  
+        //@extend gradient-font;
+        color: $gradient-main-color;
+        //-webkit-text-stroke-width: 1px;
+        //-webkit-text-stroke-color: #2c1c5493;
+        margin: 0;
+    }
+    &p{
+        margin: 0;
+    }
+    
+    text-shadow: -2px 2px 4px #0000004f;
+    text-align: left;   
+}
+
+a.cart-font{
+    @extend .cart-font;
+    color: lighten($gradient-main-color, 20%);
+    text-decoration: underline;
+}
+
+.text-center{
+    text-align: center;
+}

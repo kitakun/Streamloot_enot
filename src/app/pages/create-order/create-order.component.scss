@@ -1,0 +1,88 @@
+.create-order{
+    width: 100%;
+    font-size: 80%;
+    transition: opacity 0.5s ease;
+    opacity: 1;
+    &.in-loading{
+        opacity: 0.2;
+    }
+
+    .seal{
+        position: absolute;
+        height: 130px;
+        width: 130px;
+        left: calc(50% - 75px);
+        background-image: url(../../../assets/order/seal.png);
+    }
+
+    .accept{
+        position: absolute;
+        left: calc(50% + 60px);
+        margin-top: 24px;
+
+        input{
+            height: 84px;
+            width: 220px;
+            border: 0px;
+            background-color: transparent;
+            background-image: url(../../../assets/order/accept.png);
+
+            transition: all 0.1s ease;
+            transform: scale(1);
+            &:active{
+                transform: scale(0.95);
+            }
+        }
+    }
+
+    .order-scroll{        
+        max-width: 500px;
+        margin: 0 auto;
+        margin-top: 60px;
+        margin-bottom: 120px;
+
+        border: 10px solid transparent;
+        border-image-slice: 18;
+        border-image-width: 10px;
+        border-image-outset: 1;
+        background-color: #ceb57d;
+        //background-image: url('../../../assets/order/listbg.png') !important;
+        border-image: url('../../../assets/order/list.png') round;
+
+        .input-field {
+            border: 0;
+            background: transparent;
+            border-bottom: 2px solid #6f5b44;
+            padding: 4px; 
+            &[disabled]{
+                background-color: #6f5b4429;
+            }
+        }
+
+        h1,h2,h3,h4{
+            text-align: center;
+        }
+
+        .center{
+            text-align: center;
+        }
+
+        .full{
+            width:100%;
+        }
+        .min{
+            width:10px;
+        }
+
+        .inline{
+            display: table;
+            > * {
+                display: table-cell;
+            }
+        }
+
+        .telephon-header{
+            margin-bottom: 10px;
+        }
+    }
+}

@@ -1,0 +1,176 @@
+.cart-holder{
+    padding-top: 80px;
+
+
+
+    .cart-header{
+        width: 130px;
+        margin: 0 auto;
+        text-align: center;
+        border: 10px solid transparent;
+        border-image: url('../../../assets/cart/CartHeader.png') round;
+        div{
+            padding: 10px;
+            p  {
+                margin: 0px;
+            }
+            background-color: #424242;
+        }
+    }
+
+    .cart-panel{
+        max-width: 600px;
+        margin: 0 auto;
+        margin-top: 30px;
+        margin-bottom: 60px;
+
+        border: 10px solid transparent;
+        border-image-slice: 18;
+        border-image-width: 10px;
+        border-image-outset: 1;
+        background-color: #4a3872 !important;
+        border-image: url('../../../assets/cart/CartSlicePanel.png') round;
+
+        .top{
+            top: 232px;
+            position: absolute;
+            content: '';
+            left: 50%;
+            transform: translateX(-50%);
+            width: 149px; height: 110px;
+            background: url('../../../assets/cart/cartTop.png');
+        }
+
+        .middle-content{
+            padding-top: 2px;
+            background-size: cover;
+            background-size: 100% 100%;
+            background-image: url('../../../assets/cart/CartPanelBg.png');
+
+            padding: 15px;
+            padding-bottom: 0px;
+            border: 10px solid transparent;
+            border-image-slice: 18;
+            border-image-width: 10px;
+            border-image-outset: 1;
+            -o-border-image: url('../../../assets/cart/purpleRamkas.png') round;
+            border-image: url('../../../assets/cart/purpleRamkas.png') round;
+
+            .item-container{
+                margin: 10px;
+                border: 10px solid transparent;
+                border-image: url('../../../assets/cart/cartItem.png') round;
+                .content{
+                    background-color: #b5a678;
+                    .inline{
+                        display: inline-block;
+                    }
+                    table{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }   
+}
+.bottom{
+    padding-top: 40px;
+    padding-bottom: 40px;
+    width:100%;
+    text-align: center;
+    button.slice{
+        transition: transform 0.2s ease-in-out;
+        transform: scale(1);
+
+        padding: 1px;
+        border: 10px solid transparent;
+        background-color: #201b20 !important;
+        border-image: url('../../../assets/panel2/btn.png') round;
+
+        p{
+            margin: 0;
+            text-align: center;
+            &:last-child{
+                margin-top: 2px;
+            }
+        }
+
+        &:active{
+            transform: scale(0.95);
+        }
+    }
+}
+
+.no-items{
+    width: 100%;
+    padding: 20px;
+
+    h3{
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .back-to-home {
+        text-align: center;
+        width: 100%;
+        color: #ffdd41;
+        border: 0;
+        background: rgba(210, 212, 44, 0.1);
+        margin: 0 auto;
+        width: 240px;
+        padding: 8px;
+        display: block;
+
+        transition: all 0.2s ease-in-out;
+        transform: scale(1);
+
+        &:hover {
+            transform: scale(1.02);
+        }
+        &:active {
+            transform: scale(0.95);
+        }
+    }
+}
+
+.cancel-btn{
+    border: 0;
+    background-image: url('../../../assets/cart/krestik.png');
+    background-size: 38px 38px;
+    background-position: -3px -2px;
+    background-color: transparent;
+    height: 32px;
+    width: 32px;
+    float: right;
+}
+
+.setup-btn{
+    border: 0;
+    background-image: url('../../../assets/cart/edit.png');
+    background-size: 32px 32px;
+    background-color: transparent;
+    height: 32px;
+    width: 32px;
+    float: right;
+    margin-right: 30px;
+}
+
+.smaller{
+    font-size: 15px;
+}
+
+.chose-attrs-modal{
+    position: relative;
+    height: 90%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.modal-bottom {
+    width: 100%;
+    margin: 10px;
+    text-align: center;
+    * {
+        margin: 10px;
+    }
+}

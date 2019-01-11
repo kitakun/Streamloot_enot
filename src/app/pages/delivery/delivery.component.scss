@@ -1,0 +1,100 @@
+.delivery {
+    width: 100%;
+    margin-top: 30px;
+    padding-top: 20px;
+
+    .tab-panel {
+
+        .row {
+            display: table;
+        }
+
+        .ncol {
+            display: table-cell;
+            min-width: 200px;
+        }
+
+        button {
+            display: inline;
+            font-size: 22px;
+            &.active{
+                color:#ffdd41;
+            }
+        }
+
+        .right {
+            text-align: right;
+        }
+    }
+
+    .delivery-panel {
+        width: 100%;
+    }
+
+    .order-track-panel {
+        width: 100%;
+    }
+
+    .content-center {
+        max-width: 756px;
+        margin: 0 auto;
+
+        h1,h2,h3,h4 {
+            text-align: center;
+        }
+    }
+
+    .fixed-panel {
+        height: 66px;
+        max-width: 512px;
+        font-size: 15px;
+        background-size: cover;
+        margin: 0px auto;
+        background-position: center;
+    }
+    
+    .panel {
+        max-width: 400px;
+        margin: 0 auto;
+        margin-top: 30px;
+        margin-bottom: 120px;
+        font-size: 90%;
+        padding: 15px;
+
+        border: 10px solid transparent;
+        border-image-slice: 18;
+        border-image-width: 10px;
+        border-image-outset: 1;
+        background-color: #4a3872 !important;
+        border-image: url('../../../assets/cart/CartSlicePanel.png') round;
+    }
+
+    .filter-input {
+        padding-top: 5px;
+        padding-bottom: 15px;
+    }
+    
+    table {
+        width:100%;
+        border-collapse: collapse;
+        th,td {
+            text-align: center;
+        }
+        th {
+            border-bottom: 1px solid #6f5b44;
+            padding-bottom: 4px;
+            font-weight: bold;
+        }
+    }
+}
+
+.input-field {
+    border: 0;
+    background: transparent;
+    border-bottom: 2px solid #6f5b44;
+    padding: 4px;
+    color: white;
+    &[disabled] {
+        background-color: #6f5b4429;
+    }
+}

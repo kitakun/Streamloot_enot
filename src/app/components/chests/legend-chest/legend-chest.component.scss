@@ -1,0 +1,74 @@
+@import "../base-chests.scss";
+
+$imgSizeWidth: 363px;
+
+$animationSpeed: 4s;
+$glowAnimSpeed: 4s;
+
+.lega{
+    width: $imgSizeWidth * 2;
+    z-index: 10;
+    .glow{
+        @extend .glow;
+    }
+
+    .chest{
+        left: -1%;
+        top: 15px;
+        position: absolute;
+        z-index: 9;
+        width: 100%;
+    }
+
+    .aura{
+        -webkit-animation: rotating $animationSpeed ease-in-out infinite;
+        -moz-animation: rotating $animationSpeed ease-in-out infinite;
+        -ms-animation: rotating $animationSpeed ease-in-out infinite;
+        -o-animation: rotating $animationSpeed ease-in-out infinite;
+        animation: rotating $animationSpeed ease-in-out infinite;
+    }
+    @-webkit-keyframes rotating {
+        0% { opacity: 0;}
+        20%{ opacity: 1; }
+        40%{ opacity: 0.6; }
+        60%{ opacity: 0.8; }
+        80%{ opacity: 0.7; }
+        100% { opacity: 0; }
+    }
+    @keyframes rotating {
+        0% { opacity: 0;}
+        20%{ opacity: 1; }
+        40%{ opacity: 0.6; }
+        60%{ opacity: 0.8; }
+        80%{ opacity: 0.7; }
+        100% { opacity: 0; }
+    }
+}
+
+.active.lega{
+    .glow{
+        overflow: hidden;
+        animation-delay: $glowAnimSpeed;
+        -webkit-animation-delay: $glowAnimSpeed;
+        opacity: 1;
+        -webkit-animation: glowEff $glowAnimSpeed ease-in-out infinite;
+        -moz-animation: glowEff $glowAnimSpeed ease-in-out infinite;
+        -ms-animation: glowEff $glowAnimSpeed ease-in-out infinite;
+        -o-animation: glowEff $glowAnimSpeed ease-in-out infinite;
+        animation: glowEff $glowAnimSpeed ease-in-out infinite;
+    }
+    @-webkit-keyframes glowEff {
+        0% { opacity: 0; }
+        30%{ opacity: 0.7; }
+        50%{ opacity: 0.4; }
+        70%{ opacity: 0.9; }
+        100%{ opacity: 0; }
+    }
+    @keyframes glowEff {
+        0% { opacity: 0; }
+        30%{ opacity: 0.7; }
+        50%{ opacity: 0.4; }
+        70%{ opacity: 0.9; }
+        100%{ opacity: 0; }
+    }
+}

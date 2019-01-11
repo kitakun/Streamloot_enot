@@ -1,0 +1,8 @@
+<div class="alerts">
+  <div *ngFor='let alert of alerts' 
+    class="alert cart-font"
+    [ngStyle]='getStyles(alert)'
+    [class.pop]='alert.pop'>
+    {{alert.msg}}
+  </div>
+</div>

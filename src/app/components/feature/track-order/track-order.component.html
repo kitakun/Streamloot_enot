@@ -1,0 +1,57 @@
+<div class="track-order">
+    <div class="create-order">
+
+        <div class="order-scroll" style="
+                border-image-slice: 160;
+                border-image-width: 70px;
+                border-image-outset: 7;">
+            <h2 class="cart-font">Проверить статус заказа:</h2>
+
+            <div class="inputs center">
+                <div class="inline full">
+                    <input [(ngModel)]='trackModel.OrderCode' [attr.disabled]='searchingOrder ? "disabled" : null'
+                        class="input-field" type="text" placeholder="Код доступа" />
+                </div>
+
+                <div class="inline full">
+                    <input [(ngModel)]='trackModel.OrderNumber' [attr.disabled]='searchingOrder ? "disabled" : null'
+                        class="input-field" type="text" placeholder="Номер заказа" />
+                </div>
+
+                <div class="inline full bottom">
+                    <button *ngIf='!searchingOrder' class="slice" (click)="checkOrder()" style="
+                            border-image-slice: 18;
+                            border-image-width: 10px;
+                            border-image-outset: 1;">
+                        <p class="cart-font">ПОСМОТРЕТЬ</p>
+                    </button>
+                    <loading width='40' *ngIf='searchingOrder'></loading>
+                </div>
+
+            </div>
+
+            <div class="seal"></div>
+        </div>
+
+        <items-panel2 *ngIf='loadedDataModel' class="cart-font" width='500'>
+            <h2>Заказ: {{loadedDataModel.OrderNumber}}</h2>
+            <p>Создан: {{loadedDataModel.OrderCreated | date:'dd.MM.yyyy'}}</p>
+            <h3>Текущий статус: {{russianState(loadedDataModel)}}</h3>
+            <br />
+            <table class='change-table'>
+                <tbody>
+                    <tr *ngFor='let change of loadedDataModel.Changes'>
+                        <td class="change-base-info">
+                            <p>Изменен: {{change.createdDate | date:'dd.MM.yyyy'}}</p>
+                            <p>Статус: {{russianState(change.newState)}}</p>
+                        </td>
+                        <td class="change-message">
+                            {{change.message}}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </items-panel2>
+
+    </div>
+</div>

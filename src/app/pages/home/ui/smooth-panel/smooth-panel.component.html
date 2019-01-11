@@ -1,0 +1,37 @@
+<items-panel2 *ngIf="prevModel" [opacity]='hidePrev()'>
+    <div class="panel">
+        <div class="cart-font">
+            <p *ngFor="let item of prevModel.Items; let i = index">
+                <span>{{i + 1}}) </span>
+                <span>{{item.Name}}</span>
+            </p>
+        </div>
+        <div class="bottom">
+            <button class="slice" (click)="addToCart(prevModel)" style="border-image-slice: 18;
+                    border-image-width: 10px;
+                    border-image-outset: 1;">
+                <p class="cart-font">КУПИТЬ</p>
+                <p class="cart-font">{{prevModel.Price}}p</p>
+            </button>
+        </div>
+    </div>
+</items-panel2>
+
+<items-panel2 *ngIf="!prevModel && currentSelectedItem" [smoothShowing]='true'>
+    <div>
+        <div class="cart-font">
+            <p *ngFor="let item of currentSelectedItem.Items; let i = index">
+                <span>{{i + 1}}) </span>
+                <span>{{item.Name}}</span>
+            </p>
+        </div>
+        <div class="bottom">
+            <button class="slice" (click)="addToCart(currentSelectedItem)" style="border-image-slice: 18;
+                            border-image-width: 10px;
+                            border-image-outset: 1;">
+                <p class="cart-font">КУПИТЬ</p>
+                <p class="cart-font">{{currentSelectedItem.Price}}p</p>
+            </button>
+        </div>
+    </div>
+</items-panel2>

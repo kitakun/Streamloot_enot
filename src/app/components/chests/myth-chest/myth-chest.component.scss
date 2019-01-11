@@ -1,0 +1,78 @@
+@import "../base-chests.scss";
+
+$glowAnimSpeed: 5s;
+$imgSizeWidth: 363px;
+
+.myth{
+    width: $imgSizeWidth * 2;
+    .glow{
+        @extend .glow;
+    }
+
+    .chest{
+        width: 80%;
+        left: 49px;
+        top: 75px;
+        z-index: 20;
+        position: absolute;
+    }
+
+    .aura{
+        left: 3px;
+        top: 100px;
+    }
+
+    .aura{
+        -webkit-animation: rotating $glowAnimSpeed ease-in-out infinite;
+        -moz-animation: rotating $glowAnimSpeed ease-in-out infinite;
+        -ms-animation: rotating $glowAnimSpeed ease-in-out infinite;
+        -o-animation: rotating $glowAnimSpeed ease-in-out infinite;
+        animation: rotating $glowAnimSpeed ease-in-out infinite;
+    }
+    @-webkit-keyframes rotating {
+        0% { opacity: 0; }
+        20%{ opacity: 0.8; }
+        30%{ opacity: 1; }
+        60%{ opacity: 0.7; }
+        70%{ opacity: 1; }
+        100% { opacity: 0; }
+    }
+    @keyframes rotating {
+        0% { opacity: 0; }
+        20%{ opacity: 0.8; }
+        30%{ opacity: 1; }
+        60%{ opacity: 0.7; }
+        70%{ opacity: 1; }
+        100% { opacity: 0; }
+    }
+
+    &.active{
+        top: -380px;
+        .glow{
+            top: -380px;
+            animation-delay: $glowAnimSpeed;
+            -webkit-animation-delay: $glowAnimSpeed;
+            opacity: 1;
+            -webkit-animation: mythglowEff $glowAnimSpeed ease-in-out infinite;
+            -moz-animation: mythglowEff $glowAnimSpeed ease-in-out infinite;
+            -ms-animation: mythglowEff $glowAnimSpeed ease-in-out infinite;
+            -o-animation: mythglowEff $glowAnimSpeed ease-in-out infinite;
+            animation: mythglowEff $glowAnimSpeed ease-in-out infinite;
+        }
+        @-webkit-keyframes mythglowEff {
+            0% { opacity: 0; }
+            30%{ opacity: 0.6; }
+            50%{ opacity: 0.3; }
+            70%{ opacity: 0.6; }
+            100%{ opacity: 0; }
+        }
+        @keyframes mythglowEff {
+            0% { opacity: 0; }
+            30%{ opacity: 0.6; }
+            50%{ opacity: 0.3; }
+            70%{ opacity: 0.6; }
+            100%{ opacity: 0; }
+        }
+    }
+}
+
