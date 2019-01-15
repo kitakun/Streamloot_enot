@@ -26,11 +26,11 @@ Enot streamloot web-client for [Streamloot e-commerce](https://github.com/kitaku
         * `chests`  - bundles are chests
         * `feature` - single feature: e.g. track-order panel
         * `shared`  - features like 'background video'
-    `Interceptors`  - project middlewares
-    `Models`        - all models used in project
-    `pages`         - route pages components
-    `services`      - static services like alerts
-    `Styles`        - static base styles
+    * `Interceptors`  - project middlewares
+    * `Models`        - all models used in project
+    * `pages`         - route pages components
+    * `services`      - static services like alerts
+    * `Styles`        - static base styles
 
 ## TODO
 1. Different page for streamer - notification for ClrBrowser about ordering something with message
