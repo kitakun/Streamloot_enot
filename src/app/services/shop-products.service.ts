@@ -3,6 +3,7 @@ import { ShopProduct } from '../Models/Products/ShopProduct';
 import { BundleItem } from '../Models/Products/BundleItem';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
+import { AlertsService } from './alerts.service';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,9 @@ import { HttpClient } from '@angular/common/http';
 export class ShopProductsService implements IShopProductsService {
   private readonly _items: AvailableItems;
 
-  constructor(private http: HttpClient) {
+  constructor(
+    private readonly http: HttpClient,
+    private readonly alerts: AlertsService) {
     this._items = {};
   }
 
@@ -33,6 +36,7 @@ export class ShopProductsService implements IShopProductsService {
           }
         });
       } catch (err) {
+        this.alerts.Info('Static data being used!');
         console.log(err.message);
         loadedData = StaticData.getStaticData();
       }

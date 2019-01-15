@@ -1,4 +1,4 @@
-$bg: url('../../../../assets/panel2/panel2Bg.png');
+$bg: url('../../../../../assets/panel2/panel2Bg.png');
 
 .holder{
     transition: opacity 0.3s ease-in;
@@ -18,7 +18,7 @@ $bg: url('../../../../assets/panel2/panel2Bg.png');
         margin: 0 auto;
         text-align: center;
         border: 10px solid transparent;
-        border-image: url('../../../../assets/cart/CartHeader.png') round;
+        border-image: url('../../../../../assets/cart/CartHeader.png') round;
         div{
             padding: 10px;
             p  {
@@ -39,7 +39,7 @@ $bg: url('../../../../assets/panel2/panel2Bg.png');
         border-image-width: 10px;
         border-image-outset: 1;
         background-color: #4a3872 !important;
-        border-image: url('../../../../assets/cart/CartSlicePanel.png') round;
+        border-image: url('../../../../../assets/cart/CartSlicePanel.png') round;
 
         .top{
             top: 232px;
@@ -48,7 +48,7 @@ $bg: url('../../../../assets/panel2/panel2Bg.png');
             left: 50%;
             transform: translateX(-50%);
             width: 149px; height: 110px;
-            background: url('../../../../assets/cart/cartTop.png');
+            background: url('../../../../../assets/cart/cartTop.png');
         }
 
         .middle-content{
@@ -62,13 +62,13 @@ $bg: url('../../../../assets/panel2/panel2Bg.png');
             border-image-slice: 18;
             border-image-width: 10px;
             border-image-outset: 1;
-            -o-border-image: url('../../../../assets/cart/blueRamkas.png') round;
-            border-image: url('../../../../assets/cart/blueRamkas.png') round;
+            -o-border-image: url('../../../../../assets/cart/blueRamkas.png') round;
+            border-image: url('../../../../../assets/cart/blueRamkas.png') round;
 
             .item-container{
                 margin: 10px;
                 border: 10px solid transparent;
-                border-image: url('../../../../assets/cart/cartItem.png') round;
+                border-image: url('../../../../../assets/cart/cartItem.png') round;
                 .content{
                     background-color: #b5a678;
                     .inline{
@@ -94,7 +94,7 @@ $bg: url('../../../../assets/panel2/panel2Bg.png');
         padding: 10px;
         border: 10px solid transparent;
         background-color: #201b20 !important;
-        border-image: url('../../../../assets/panel2/btn.png') round;
+        border-image: url('../../../../../assets/panel2/btn.png') round;
 
         p{
             margin: 0;

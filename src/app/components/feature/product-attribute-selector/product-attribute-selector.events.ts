@@ -1,4 +1,4 @@
-import { IMorzeSignal } from "src/app/controls/Morze/Morze.interface";
+import { IMorzeSignal } from "../../shared/Morze/Morze.interface";
 
 export class AttributeSelectorEventRequest implements IMorzeSignal, IAttributeSelectorEventRequest {
     public checkValidation?: boolean;

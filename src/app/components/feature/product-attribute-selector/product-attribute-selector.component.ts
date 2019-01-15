@@ -1,10 +1,9 @@
-import { Component, Input, OnInit, OnDestroy, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input, OnInit, OnDestroy } from '@angular/core';
 import { BundleItem } from 'src/app/Models/Products/BundleItem';
-import { AttributeService } from 'src/app/services/attribute-service.service';
 import { IAttribute } from 'src/app/Models/IAttribute';
-import { MorzeAgent, IMorzeLine, IMorzeSignal } from 'src/app/controls/Morze/Morze.interface';
 import { Callback, IConstructable } from 'src/app/Models/UtilsInterfaces';
 import { AttributeSelectorEventRequest } from './product-attribute-selector.events';
+import { MorzeAgent, IMorzeLine, IMorzeSignal } from '../../shared/Morze/Morze.interface';
 
 @Component({
     selector: 'es-product-select-attribute',
@@ -30,7 +29,7 @@ export class ProductAttributeSelectorComponent implements MorzeAgent, OnInit, On
     private morzeDestroyCb: Callback;
 
     constructor(
-        private readonly attrService: AttributeService) {
+) {
     }
 
     ngOnInit(): void {

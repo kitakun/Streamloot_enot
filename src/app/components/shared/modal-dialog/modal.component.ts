@@ -1,5 +1,4 @@
 import { Component, Input, ElementRef, OnInit, OnDestroy } from '@angular/core';
-import { AttributeService } from 'src/app/services/attribute-service.service';
 import { ModalService } from './modal.service';
 import { IModalDialog } from './imodal.interface';
 

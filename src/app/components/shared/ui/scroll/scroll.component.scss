@@ -6,13 +6,13 @@
 
     border: 10px solid transparent;
     background-color: #ceb57d;
-    border-image: url('../../../../assets/order/list.png') round;
+    border-image: url('../../../../../assets/order/list.png') round;
 
     .seal{
         position: absolute;
         height: 130px;
         width: 130px;
         left: calc(50% - 75px);
-        background-image: url('../../../../assets/order/seal.png');
+        background-image: url('../../../../../assets/order/seal.png');
     }
 }

@@ -6,7 +6,6 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { Carousel3dModule } from './controls/carousel/carousel.module';
 import { MythChestComponent } from './components/chests/myth-chest/myth-chest.component';
 import { LegendChestComponent } from './components/chests/legend-chest/legend-chest.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -18,7 +17,6 @@ import { SHttpInterceptor } from './Interceptors/SHttpInterceptor';
 import { CreateOrderComponent } from './pages/create-order/create-order.component';
 import { SuccessPaymentComponent } from './pages/payment/success-payment/success-payment.component';
 import { FailedPaymentComponent } from './pages/payment/failed-payment/failed-payment.component';
-import { LoadingIndicatorComponent } from './controls/loading-indicator/loading-indicator.component';
 import { TrackOrderComponent } from './components/feature/track-order/track-order.component';
 import { StaticBackgroundComponent } from './components/shared/static-background/static-background.component';
 import { StaticVideoBackgroundComponent } from './components/shared/static-video-background/static-video-background.component';
@@ -28,9 +26,11 @@ import { AlertsComponent } from './components/feature/alerts/alerts.component';
 import { NavbarHeaderComponent } from './components/feature/navbar-header/navbar-header.component';
 import { HoverParallaxComponent } from './components/shared/hover-parallax/hover-parallax.component';
 import { AppFooterComponent } from './components/feature/app-footer/app-footer.component';
-import { Panel2Component } from './controls/ui/purple-panel/panel2.component';
-import { ScrollComponent } from './controls/ui/scroll/scroll.component';
-import { ModalComponent } from './controls/modal-dialog/modal.component';
+import { ModalComponent } from './components/shared/modal-dialog/modal.component';
+import { Panel2Component } from './components/shared/ui/purple-panel/panel2.component';
+import { LoadingIndicatorComponent } from './components/shared/loading-indicator/loading-indicator.component';
+import { ScrollComponent } from './components/shared/ui/scroll/scroll.component';
+import { Carousel3dModule } from './components/shared/carousel/carousel.module';
 
 @NgModule({
   declarations: [

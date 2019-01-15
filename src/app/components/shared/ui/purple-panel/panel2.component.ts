@@ -5,7 +5,7 @@ import { Component, OnInit, Input } from '@angular/core';
   templateUrl: './panel2.component.html',
   styleUrls: [
     './panel2.component.scss',
-    '../../../Styles/Font.scss'
+    '../../../../Styles/Font.scss'
   ]
 })
 export class Panel2Component implements OnInit {

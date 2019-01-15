@@ -26,7 +26,6 @@ Enot streamloot web-client for [Streamloot e-commerce](https://github.com/kitaku
         * `chests`  - bundles are chests
         * `feature` - single feature: e.g. track-order panel
         * `shared`  - features like 'background video'
-    `controls`      - same as `shared`, TODO: merge in shared
     `Interceptors`  - project middlewares
     `Models`        - all models used in project
     `pages`         - route pages components

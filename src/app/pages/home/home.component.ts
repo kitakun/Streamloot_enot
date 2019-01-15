@@ -4,9 +4,9 @@ import { DOCUMENT } from '@angular/platform-browser';
 import { ShopProductsService } from 'src/app/services/shop-products.service';
 import { StaticbackgroundService } from 'src/app/services/staticbackground.service';
 import { CartService } from 'src/app/services/cart-service.service';
-import { MorzeIntance } from 'src/app/controls/Morze/Morze.impl';
 import { AttributeSelectorEventRequest } from 'src/app/components/feature/product-attribute-selector/product-attribute-selector.events';
-import { ModalService } from 'src/app/controls/modal-dialog/modal.service';
+import { MorzeIntance } from 'src/app/components/shared/Morze/Morze.impl';
+import { ModalService } from 'src/app/components/shared/modal-dialog/modal.service';
 
 const choseAttributeModalName = 'select-attrs';
 
