@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild, ElementRef } from '@angular/core';
 import { StaticbackgroundService } from 'src/app/services/staticbackground.service';
 import { Callback } from 'src/app/Models/UtilsInterfaces';
 
@@ -12,6 +12,8 @@ export class StaticVideoBackgroundComponent implements OnInit, OnDestroy {
   public opacity: number;
   private _unsubscribe: Callback;
 
+  @ViewChild('vidos') vidos: ElementRef;
+
   constructor(private readonly staticService: StaticbackgroundService) { }
 
   ngOnInit() {
@@ -19,6 +21,10 @@ export class StaticVideoBackgroundComponent implements OnInit, OnDestroy {
     this._unsubscribe = this.staticService.SubscribeOnUpdate(() => {
       this.opacity = this.staticService.backgroundOpacity;
     });
+    if (this.vidos) {
+      const videoElement = this.vidos.nativeElement as IVideo;
+      setTimeout(() => videoElement.play(), 1000);
+    }
   }
 
   ngOnDestroy(): void {
@@ -27,4 +33,8 @@ export class StaticVideoBackgroundComponent implements OnInit, OnDestroy {
       this._unsubscribe = void 0;
     }
   }
+}
+
+interface IVideo {
+  play(): void;
 }
