@@ -10,10 +10,10 @@ Enot streamloot web-client for [Streamloot e-commerce](https://github.com/kitaku
 - Placing order
 - Tracking order status
 - Filtering cities for knowing how much will cost delivery
+- Preview of every product in bundle
 
 ##### What currently NOT implemented?
 - Load/upload products images
-- Preview of every product in bundle
 - Include CDEK widget for calculating delivery price
 - On placing order show under scroll what we will buy
 - Improve panels graphically (not all images are done)
