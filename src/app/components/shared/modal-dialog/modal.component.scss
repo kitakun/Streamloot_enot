@@ -38,9 +38,7 @@
             @extend .modal;
             opacity: 1;
             width: 400px;
-            min-height: 300px;
-            height: calc(100% - 100px);
-            background-color: white;
+            min-height: 150px;
             margin: 0 auto;
             top: 50%;
             transform: translateY(-50%);

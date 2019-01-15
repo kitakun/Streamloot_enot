@@ -36,7 +36,7 @@
                     <div *ngIf="hasAttrs(item.item)" class="smaller">
                         <hr />
                         <div *ngFor="let product of item.item.Items">
-                            <div *ngFor="let attrItem of product.Attributes" class="text">
+                            <div *ngFor="let attrItem of product.Attributes | userAttributes" class="text">
                                 {{product.Name}} {{localize(attrItem)}} {{attrItem.Selected}}
                             </div>
                         </div>
@@ -71,7 +71,7 @@
 
 
 <!-- select size modal -->
-<es-modal id='select-attrs' width='700'>
+<es-modal id='select-attrs' width='700' height='75%'>
     <items-scroll>
         <div class="chose-attrs-modal">
             <h2 class="text text-center">Доп параметры</h2>

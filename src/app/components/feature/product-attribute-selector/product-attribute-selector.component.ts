@@ -4,6 +4,7 @@ import { IAttribute } from 'src/app/Models/IAttribute';
 import { Callback, IConstructable } from 'src/app/Models/UtilsInterfaces';
 import { AttributeSelectorEventRequest } from './product-attribute-selector.events';
 import { MorzeAgent, IMorzeLine, IMorzeSignal } from '../../shared/Morze/Morze.interface';
+import { environment } from 'src/environments/environment';
 
 @Component({
     selector: 'es-product-select-attribute',
@@ -29,7 +30,7 @@ export class ProductAttributeSelectorComponent implements MorzeAgent, OnInit, On
     private morzeDestroyCb: Callback;
 
     constructor(
-) {
+    ) {
     }
 
     ngOnInit(): void {
@@ -70,5 +71,16 @@ export class ProductAttributeSelectorComponent implements MorzeAgent, OnInit, On
             default:
                 return '~';
         }
+    }
+
+    public getPreviewUrl(product: BundleItem): string {
+        const imagesData = product.Attributes.find(a => a.Name == 'ProductImageAttr');
+        if (imagesData) {
+            const arrayOfIds = imagesData.Values;
+            if (arrayOfIds && arrayOfIds.length > 0) {
+                return `${environment.apiAddress}/pictures/Load&pictureId=${arrayOfIds[0]}`;
+            }
+        }
+        return `${environment.apiAddress}/pictures/Load`;
     }
 }

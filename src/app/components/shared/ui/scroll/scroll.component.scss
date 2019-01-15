@@ -1,8 +1,8 @@
 .scroll{
     margin: 0 auto;
-    height: 100%;
-    //margin-top: 60px;
-    //margin-bottom: 120px;
+    max-height: 100%;
+    overflow: auto;
+    
 
     border: 10px solid transparent;
     background-color: #ceb57d;

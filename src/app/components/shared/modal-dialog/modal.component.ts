@@ -14,6 +14,7 @@ export class ModalComponent implements OnInit, OnDestroy, IModalDialog {
 
     @Input() id: string;
     @Input('width') minWidth: number;
+    @Input('height') heightVal: string;
 
     private element: any;
 
@@ -29,6 +30,9 @@ export class ModalComponent implements OnInit, OnDestroy, IModalDialog {
 
         if (this.minWidth) {
             this.element.firstChild.firstChild.style['min-width'] = this.minWidth + 'px';
+        }
+        if (this.heightVal) {
+            this.element.firstChild.firstChild.style['height'] = this.heightVal;
         }
 
         const modal: IModalDialog = this;

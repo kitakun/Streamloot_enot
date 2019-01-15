@@ -4,5 +4,7 @@ export interface IAttribute {
 
     Values: Array<string>;
 
+    IsSystem: boolean;
+
     Selected?: string;
 }

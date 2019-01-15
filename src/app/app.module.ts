@@ -31,6 +31,7 @@ import { Panel2Component } from './components/shared/ui/purple-panel/panel2.comp
 import { LoadingIndicatorComponent } from './components/shared/loading-indicator/loading-indicator.component';
 import { ScrollComponent } from './components/shared/ui/scroll/scroll.component';
 import { Carousel3dModule } from './components/shared/carousel/carousel.module';
+import { UserVisibleAttributePipe } from './pipes/UserVisibleAttributePipe';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,9 @@ import { Carousel3dModule } from './components/shared/carousel/carousel.module';
     AlertsComponent,
     TextWidthCalcComponent,
     LoadingIndicatorComponent,
-    ScrollComponent
+    ScrollComponent,
+
+    UserVisibleAttributePipe
   ],
   imports: [
     BrowserModule,

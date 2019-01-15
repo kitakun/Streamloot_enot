@@ -67,7 +67,7 @@ export class CartComponent implements OnInit {
   public hasAttrs(input: ShopProduct): boolean {
     if (input.Items && input.Items.length > 0) {
       for (var i = 0; i < input.Items.length; i++) {
-        if (input.Items[i].Attributes && input.Items[i].Attributes.length > 0) {
+        if (input.Items[i].Attributes && input.Items[i].Attributes.length > 0 && input.Items[i].Attributes.findIndex(a => !a.IsSystem) > -1) {
           return true;
         }
       }

@@ -44,3 +44,5 @@ src/app/components/shared/ui/scroll/scroll.component.css
 src/app/components/shared/ui/scroll/scroll.component.min.css
 src/assets/fonts/beh/stylesheet.css
 src/assets/fonts/beh/stylesheet.min.css
+src/app/pages/home/home.component.min.css
+src/app/pages/home/home.component.css
