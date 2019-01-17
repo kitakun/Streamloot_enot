@@ -11,8 +11,12 @@ export class SHttpInterceptor implements HttpInterceptor {
         head.append('Access-Control-Allow-Methods', 'GET');
         head.append('Access-Control-Allow-Origin', '*');
 
+        head.set('sl-shop-id', '1');
+
         const paramReq = req.clone({
-            headers: head
+            setHeaders: {
+                'sl-shop-id': `1`
+              }
         });
         return next.handle(paramReq);
     }
