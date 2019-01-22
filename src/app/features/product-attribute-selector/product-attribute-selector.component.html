@@ -1,0 +1,22 @@
+<div class="attribute-selector">
+    <div class="control" *ngIf='product && product.Attributes && product.Attributes.length > 0'>
+        <div *ngFor='let attr of product.Attributes  | userAttributes'>
+            <div class="size-chooser" [class.invalid]='isInvalid'>
+                <div class="preview">
+                    <img src={{getPreviewUrl(product)}} />
+                </div>
+                <div class="content text">
+                    <p>{{product.Name}}</p>
+                    <span>{{getAttrName(attr)}}</span>
+                    <div class="input-group">
+                        <label *ngFor='let aVal of attr.Values' class="size-radio">
+                            <input type="radio" [(ngModel)]="attr.Selected" (change)="isValidVals()" [name]="product.Name"
+                                [value]="aVal" />
+                            <div>{{aVal}}</div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

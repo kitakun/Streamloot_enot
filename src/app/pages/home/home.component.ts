@@ -4,9 +4,9 @@ import { DOCUMENT } from '@angular/platform-browser';
 import { ShopProductsService } from 'src/app/services/shop-products.service';
 import { StaticbackgroundService } from 'src/app/services/staticbackground.service';
 import { CartService } from 'src/app/services/cart-service.service';
-import { AttributeSelectorEventRequest } from 'src/app/components/feature/product-attribute-selector/product-attribute-selector.events';
-import { MorzeIntance } from 'src/app/components/shared/Morze/Morze.impl';
-import { ModalService } from 'src/app/components/shared/modal-dialog/modal.service';
+import { MorzeIntance } from 'src/app/shared/Morze/Morze.impl';
+import { ModalService } from 'src/app/shared/modal-dialog/modal.service';
+import { AttributeSelectorEventRequest } from 'src/app/features/product-attribute-selector/product-attribute-selector.events';
 
 const choseAttributeModalName = 'select-attrs';
 
@@ -19,7 +19,7 @@ const choseAttributeModalName = 'select-attrs';
     '../..//Styles/panel.scss',
     '../../Styles/Font.scss',
     '../../Styles/buttons.scss',
-    '../../components/chests/base-chests.scss'
+    './chests/base-chests.scss'
   ]
 })
 export class HomeComponent implements OnInit {
@@ -115,7 +115,7 @@ export class HomeComponent implements OnInit {
   public onStartSlideChange(): void {
     this.hideDescription = true;
   }
-  public onSlideChanges(): void {
+  public SlideChanges(): void {
     this.hideDescription = false;
   }
 

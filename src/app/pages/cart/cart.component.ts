@@ -6,7 +6,7 @@ import { AttributeService } from 'src/app/services/attribute-service.service';
 import { IAttribute } from 'src/app/Models/IAttribute';
 import { ShopProduct } from 'src/app/Models/Products/ShopProduct';
 import { BundleItem } from 'src/app/Models/Products/BundleItem';
-import { ModalService } from 'src/app/components/shared/modal-dialog/modal.service';
+import { ModalService } from 'src/app/shared/modal-dialog/modal.service';
 
 const choseAttributeModalName = 'select-attrs';
 

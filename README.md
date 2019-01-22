@@ -18,14 +18,14 @@ Enot streamloot web-client for [Streamloot e-commerce](https://github.com/kitaku
 - On placing order show under scroll what we will buy
 - Improve panels graphically (not all images are done)
 - Start implementing admin page for adding/editing bundles/products (make devided project)
+- Lazy loading for pages (done 1/5)
 
 ##### Structure of project
 
  * app
-    * `components`  - standalone components
-        * `chests`  - bundles are chests
-        * `feature` - single feature: e.g. track-order panel
-        * `shared`  - features like 'background video'
+    * `core`          - core module
+    * `features`      - standalone features: e.g. track-order panel
+    * `shared`        - shared module with simple components like 'background video'
     * `Interceptors`  - project middlewares
     * `Models`        - all models used in project
     * `pages`         - route pages components

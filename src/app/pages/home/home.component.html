@@ -7,7 +7,7 @@
     </div>
 
     <div *ngIf="slides.length" class="content-center chests-panel">
-        <carousel #carousel [slides]="slides" [options]="options" [onSlideChange]="onSlideChanges()" [onBeforeChange]="onStartSlideChange()">
+        <carousel #carousel [slides]="slides" [options]="options" [SlideChange]="SlideChanges()" [BeforeChange]="onStartSlideChange()">
             <carousel-slide *ngFor="let slide of slides; let i = index" (click)="slideClicked(i)">
                 <div [ngSwitch]="slide.RenderType" class="full" [class.active]='slide.Active'>
                     <chest-legend *ngSwitchCase="'legend'" [slide]="slide"></chest-legend>
