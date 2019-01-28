@@ -1,5 +1,6 @@
 <div class="holder">
-    <video #vidos muted loop [ngStyle]="{'opacity': opacity}">
-        <source src="../../../assets/videos/RASTAKHAN_COON_ARENA_1.webm" type="video/webm">
+    <video webkit-playsinline="true" autoplay="true" playsinline="true" muted="true" preload="auto" loop="loop" #vidos [ngStyle]="{'opacity': opacity}">
+        <source src="assets/videos/RASTAKHAN_COON_ARENA_1.webm" type="video/webm">
+        <source src="assets/videos/RASTAKHAN_COON_ARENA_1.mp4" type="video/mp4">
     </video>
 </div>

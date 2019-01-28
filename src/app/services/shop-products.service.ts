@@ -25,13 +25,13 @@ export class ShopProductsService implements IShopProductsService {
         loadedData.forEach(slide => {
           switch (slide.RenderType) {
             case 'epic':
-              slide.ImageSrc = '/assets/chests/MythChest.png';
+              slide.ImageSrc = 'assets/chests/MythChest.png';
               break;
             case 'legend':
-              slide.ImageSrc = '/assets/chests/LegendChest.png';
+              slide.ImageSrc = 'assets/chests/LegendChest.png';
               break;
             default:
-              slide.ImageSrc = '/assets/chests/RareChest.png';
+              slide.ImageSrc = 'assets/chests/RareChest.png';
               break;
           }
         });
@@ -67,7 +67,7 @@ class StaticData {
 
     let rarBudle = new ShopProduct(
       'rare',
-      '/assets/chests/RareChest.png',
+      'assets/chests/RareChest.png',
       'Редкий набор',
       1900);
     rarBudle.Items.push(<BundleItem>
@@ -99,7 +99,7 @@ class StaticData {
 
     let epicBundle = new ShopProduct(
       'myth',
-      '/assets/chests/MythChest.png',
+      'assets/chests/MythChest.png',
       'Эпический набор',
       2700);
     epicBundle.RenderType = 'epic';
@@ -142,7 +142,7 @@ class StaticData {
 
     let legendBundle = new ShopProduct(
       'lega',
-      '/assets/chests/LegendChest.png',
+      'assets/chests/LegendChest.png',
       'Легендарный набор',
       4800);
     legendBundle.RenderType = 'legend';

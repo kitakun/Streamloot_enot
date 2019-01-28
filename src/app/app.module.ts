@@ -11,12 +11,16 @@ import { FailedPaymentComponent } from './pages/payment/failed-payment/failed-pa
 
 import { BrowserModule } from '@angular/platform-browser';
 import { FeaturesModule } from './features/features.module';
+import { APP_BASE_HREF } from '@angular/common';
 
 @NgModule({
   imports: [
     BrowserModule,
     AppRoutingModule,
     FeaturesModule
+  ],
+  providers: [
+    { provide: APP_BASE_HREF, useValue: '/enot' },
   ],
   declarations: [
     AppComponent,

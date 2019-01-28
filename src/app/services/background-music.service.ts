@@ -10,7 +10,7 @@ export class BackgroundMusicService implements IBackgroundMusic {
 
   Play(): void {
     this._audio = new Howl({
-      src: ['/assets/mus/stalker.mp3']
+      src: ['assets/mus/stalker.mp3']
     });
     // Play the sound.
     this._audio.play();
