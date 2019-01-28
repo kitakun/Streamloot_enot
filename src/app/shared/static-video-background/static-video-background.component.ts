@@ -24,7 +24,7 @@ export class StaticVideoBackgroundComponent implements OnInit, OnDestroy {
     if (this.vidos) {
       const videoElement = this.vidos.nativeElement as IVideo;
       setTimeout(() => {
-        videoElement.pause();
+        videoElement.muted = true;
         videoElement.play();
       }, 1000);
     }
@@ -39,6 +39,7 @@ export class StaticVideoBackgroundComponent implements OnInit, OnDestroy {
 }
 
 interface IVideo {
+  muted: boolean;
   pause(): void;
   play(): void;
 }
