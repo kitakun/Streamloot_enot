@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-failed-payment',
@@ -10,11 +10,5 @@ import { Component, OnInit } from '@angular/core';
      '../../../Styles/panel.scss'
     ]
 })
-export class FailedPaymentComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+export class FailedPaymentComponent {
 }

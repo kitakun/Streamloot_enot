@@ -56,7 +56,7 @@ export class HomeComponent implements OnInit {
     this.attrsChoserMorze = new MorzeIntance();
   }
 
-  ngOnInit() {
+  public ngOnInit() {
     this.addToCartClickBinded = this.addToCartClick.bind(this);
 
     this.productsService.getItems().then(items => {
@@ -77,8 +77,7 @@ export class HomeComponent implements OnInit {
     });
   }
 
-
-  clickRight(): void {
+  public clickRight(): void {
     let curIndex = this.slides.indexOf(this.box);
     if (curIndex == 0) {
       this.slideClicked(this.slides.length - 1);
@@ -86,7 +85,8 @@ export class HomeComponent implements OnInit {
       this.slideClicked(curIndex - 1);
     }
   }
-  clickLeft(): void {
+
+  public clickLeft(): void {
     let curIndex = this.slides.indexOf(this.box);
     if (curIndex == this.slides.length - 1) {
       this.slideClicked(0);
@@ -95,7 +95,7 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  slideClicked(index): void {
+  public slideClicked(index): void {
     if (this.carousel) {
       this.carousel.slideClicked(index)
     }

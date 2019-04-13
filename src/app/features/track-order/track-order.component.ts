@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+
 import { environment } from 'src/environments/environment';
 import { AlertsService } from 'src/app/services/alerts.service';
 import { IError } from 'src/app/Models/UtilsInterfaces';
@@ -17,23 +18,20 @@ import { TrackOrderInfo, OrderStatus } from 'src/app/Models/TrackOrder/TrackOrde
         '../../pages/create-order/create-order.component.scss',
     ]
 })
-export class TrackOrderComponent implements OnInit {
+export class TrackOrderComponent {
 
     public searchingOrder: boolean;
 
-    trackModel: RequestTrackOrderModel = { OrderCode: '', OrderNumber: '' };
+    public trackModel: RequestTrackOrderModel = { OrderCode: '', OrderNumber: '' };
 
-    loadedDataModel: TrackOrderInfo;
+    public loadedDataModel: TrackOrderInfo;
 
     constructor(
         private readonly http: HttpClient,
         private readonly alerts: AlertsService) {
     }
 
-    ngOnInit(): void {
-    }
-
-    checkOrder(): void {
+    public checkOrder(): void {
         this.searchingOrder = true;
         this.http
             .post<TrackOrderInfo>(`${environment.apiAddress}/Order/OrderInfo`, this.trackModel)
@@ -51,7 +49,7 @@ export class TrackOrderComponent implements OnInit {
     }
 
 
-    russianState(info: TrackOrderInfo): string {
+    public russianState(info: TrackOrderInfo): string {
         switch (info.State) {
             case OrderStatus.WaitingForPayment:
                 return 'Ожидает платежа';

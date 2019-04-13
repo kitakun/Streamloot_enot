@@ -10,8 +10,8 @@
                     <span>{{getAttrName(attr)}}</span>
                     <div class="input-group">
                         <label *ngFor='let aVal of attr.Values' class="size-radio">
-                            <input type="radio" [(ngModel)]="attr.Selected" (change)="isValidVals()" [name]="product.Name"
-                                [value]="aVal" />
+                            <input type="radio" [(ngModel)]="attr.Selected" (change)="isValidVals()"
+                                [name]="product.Name" [value]="aVal" />
                             <div>{{aVal}}</div>
                         </label>
                     </div>

@@ -1,10 +1,12 @@
 import { Component, Input, OnInit, OnDestroy } from '@angular/core';
+
 import { BundleItem } from 'src/app/Models/Products/BundleItem';
 import { IAttribute } from 'src/app/Models/IAttribute';
-import { Callback, IConstructable } from 'src/app/Models/UtilsInterfaces';
-import { AttributeSelectorEventRequest } from './product-attribute-selector.events';
-import { environment } from 'src/environments/environment';
 import { MorzeAgent, IMorzeLine, IMorzeSignal } from 'src/app/shared/Morze/Morze.interface';
+import { Callback, IConstructable } from 'src/app/Models/UtilsInterfaces';
+import { environment } from 'src/environments/environment';
+
+import { AttributeSelectorEventRequest } from './product-attribute-selector.events';
 
 @Component({
     selector: 'es-product-select-attribute',
@@ -27,18 +29,19 @@ export class ProductAttributeSelectorComponent implements MorzeAgent, OnInit, On
 
     @Input('morze')
     public morze: IMorzeLine;
-    private morzeDestroyCb: Callback;
 
-    ngOnInit(): void {
+    private _morzeDestroyCb: Callback;
+
+    public ngOnInit(): void {
         if (this.morze) {
-            this.morzeDestroyCb = this.morze.hearing(this);
+            this._morzeDestroyCb = this.morze.hearing(this);
         }
     }
 
-    ngOnDestroy(): void {
-        if (this.morzeDestroyCb) {
-            this.morzeDestroyCb();
-            this.morzeDestroyCb = null;
+    public ngOnDestroy(): void {
+        if (this._morzeDestroyCb) {
+            this._morzeDestroyCb();
+            this._morzeDestroyCb = null;
         }
     }
 
@@ -51,7 +54,7 @@ export class ProductAttributeSelectorComponent implements MorzeAgent, OnInit, On
         }
     }
 
-    isValidVals(): void {
+    public isValidVals(): void {
         this.isInvalid = false;
         this.product.Attributes.forEach(atr => {
             if (!atr.Selected) {

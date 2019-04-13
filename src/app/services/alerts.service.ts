@@ -5,7 +5,7 @@ import { Callback, Size } from '../Models/UtilsInterfaces';
     providedIn: 'root'
 })
 export class AlertsService implements IAlertService {
-    static duration: number = 4;
+    public static duration: number = 4;
 
     private _subscribed: Array<ISendAlert>
 
@@ -13,21 +13,21 @@ export class AlertsService implements IAlertService {
         this._subscribed = new Array<ISendAlert>();
     }
 
-    Info(msg: string) {
-        let alert = this.msg(msg);
+    public Info(msg: string): void {
+        let alert = this._msg(msg);
         alert.class = 'info';
 
-        this.updateCbs(alert);
+        this._updateCbs(alert);
     }
 
-    Error(msg: string) {
-        let alert = this.msg(msg);
+    public Error(msg: string): void {
+        let alert = this._msg(msg);
         alert.class = 'error';
 
-        this.updateCbs(alert);
+        this._updateCbs(alert);
     }
 
-    private msg(msg: string): IMessageObject {
+    private _msg(msg: string): IMessageObject {
         let obj = <IMessageObject>{
             isAlive: true,
             msg: msg,
@@ -38,7 +38,7 @@ export class AlertsService implements IAlertService {
         return obj;
     }
 
-    SubscribeOnUpdate(cb: ISendAlert): Callback {
+    public SubscribeOnUpdate(cb: ISendAlert): Callback {
         let unsubAction = () =>
             this._subscribed = this._subscribed.filter(c => c != cb);
 
@@ -46,7 +46,7 @@ export class AlertsService implements IAlertService {
         return unsubAction;
     }
 
-    private updateCbs(newAllert: IMessageObject) {
+    private _updateCbs(newAllert: IMessageObject) {
         this._subscribed.forEach(sb => sb(newAllert));
     }
 }

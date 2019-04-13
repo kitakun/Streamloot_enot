@@ -10,10 +10,12 @@ import { StaticbackgroundService } from 'src/app/services/staticbackground.servi
   ]
 })
 export class LegendChestComponent {
-  @Input() slide: ShopProduct;
+  
+  @Input() 
+  slide: ShopProduct;
 
-  constructor(private readonly staticBackground: StaticbackgroundService) {
-
+  constructor(
+    private readonly staticBackground: StaticbackgroundService) {
   }
 
   public hover(show?: boolean): void {

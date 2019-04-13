@@ -13,12 +13,14 @@ import { CartService } from 'src/app/services/cart-service.service';
 })
 export class NavbarHeaderComponent {
 
-  public _itemsInCart: number = 0;
+  public itemsInCart: number = 0;
 
-  constructor(private readonly CartService: CartService) {
-    this._itemsInCart = this.CartService.GetItemsCount();
+  constructor(
+    private readonly CartService: CartService) {
+    this.itemsInCart = this.CartService.GetItemsCount();
+
     CartService.SubscribeOnUpdate(() => {
-      this._itemsInCart = this.CartService.GetItemsCount();
-    })
+      this.itemsInCart = this.CartService.GetItemsCount();
+    });
   }
 }

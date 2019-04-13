@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { CartService } from 'src/app/services/cart-service.service';
 import { Router } from '@angular/router';
+
+import { CartService } from 'src/app/services/cart-service.service';
 import { ICartItem } from 'src/app/Models/Cart/ICartItem';
 import { AttributeService } from 'src/app/services/attribute-service.service';
 import { IAttribute } from 'src/app/Models/IAttribute';
@@ -26,6 +27,7 @@ export class CartComponent implements OnInit {
   public TotalPrice: number;
 
   public proceededToCartProduct: Array<BundleItem>;
+
   private _editedCartItem: ICartItem;
 
   constructor(
@@ -37,14 +39,14 @@ export class CartComponent implements OnInit {
 
   ngOnInit() {
     this.CartItems = this.cartService.GetItems();
-    this.updateTotal();
+    this._updateTotal();
   }
 
   public delete(item: ICartItem): void {
     let deletedItem = item.item;
     this.cartService.DeleteFromCart(deletedItem);
     this.CartItems = this.cartService.GetItems();
-    this.updateTotal();
+    this._updateTotal();
   }
 
   public Proceed(): void {
@@ -53,7 +55,7 @@ export class CartComponent implements OnInit {
     }
   }
 
-  private updateTotal(): void {
+  private _updateTotal(): void {
     this.TotalPrice = 0;
     for (var item in this.CartItems) {
       this.TotalPrice += this.CartItems[item].item.Price;
@@ -72,6 +74,7 @@ export class CartComponent implements OnInit {
         }
       }
     }
+
     return false;
   }
 
@@ -105,5 +108,4 @@ export class CartComponent implements OnInit {
   public cancelAttrs(): void {
     this.modalService.close(choseAttributeModalName);
   }
-
 }

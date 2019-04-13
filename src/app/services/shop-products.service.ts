@@ -1,8 +1,11 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
+import { environment } from 'src/environments/environment';
+
 import { ShopProduct } from '../Models/Products/ShopProduct';
 import { BundleItem } from '../Models/Products/BundleItem';
-import { environment } from 'src/environments/environment';
-import { HttpClient } from '@angular/common/http';
+
 import { AlertsService } from './alerts.service';
 
 @Injectable({
@@ -17,7 +20,7 @@ export class ShopProductsService implements IShopProductsService {
     this._items = {};
   }
 
-  async getItems(): Promise<ShopProduct[]> {
+  public async getItems(): Promise<ShopProduct[]> {
     if (Object.keys(this._items).length == 0) {
       let loadedData: Array<ShopProduct> = null;
       try {

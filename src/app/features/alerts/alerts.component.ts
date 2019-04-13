@@ -12,16 +12,23 @@ import { TextWidthCalc } from 'src/app/shared/text-width-calc/text-width-calc.se
   ]
 })
 export class AlertsComponent implements OnInit, OnDestroy {
-  private destroySubscription: Callback;
+  private _destroySubscription: Callback;
   public alerts: Array<IMessageObject>;
+
   constructor(
     private readonly alertService: AlertsService,
     private readonly textWidthCalculator: TextWidthCalc) {
     this.alerts = new Array();
   }
 
-  ngOnInit() {
-    this.destroySubscription = this.alertService.SubscribeOnUpdate(this.newAlert.bind(this));
+  public ngOnInit(): void {
+    this._destroySubscription = this.alertService.SubscribeOnUpdate(this.newAlert.bind(this));
+  }
+
+  public ngOnDestroy(): void {
+    if (this._destroySubscription) {
+      this._destroySubscription();
+    }
   }
 
   private debug() {
@@ -32,13 +39,7 @@ export class AlertsComponent implements OnInit, OnDestroy {
     this.alertService.Info(str);
   }
 
-  ngOnDestroy(): void {
-    if (this.destroySubscription) {
-      this.destroySubscription();
-    }
-  }
-
-  newAlert(alert: IMessageObject): void {
+  public newAlert(alert: IMessageObject): void {
     alert.size = this.textWidthCalculator.Calc(alert.msg);
     setTimeout(() => alert.pop = true, 100);
     setTimeout(() => alert.pop = false, 4000);
@@ -46,7 +47,7 @@ export class AlertsComponent implements OnInit, OnDestroy {
     this.alerts.push(alert);
   }
 
-  getStyles(alert: IMessageObject): any {
+  public getStyles(alert: IMessageObject): any {
     return {
       width: (alert.size.width + 40) + "px",
       //height: (alert.size.height + 5) + "px",

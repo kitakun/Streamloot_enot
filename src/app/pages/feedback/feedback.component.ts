@@ -7,11 +7,5 @@ import { Component, OnInit } from '@angular/core';
     './feedback.component.scss',
     '../../Styles/Font.scss']
 })
-export class FeedbackComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+export class FeedbackComponent {
 }

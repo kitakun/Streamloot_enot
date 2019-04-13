@@ -18,11 +18,11 @@ export class CartService implements ICartService {
     let loadedItem = localStorage.getItem(CartService.cartKey);
     if (loadedItem) {
       cachItems = JSON.parse(loadedItem);
-      this.callUpdateOnSubs();
+      this._callUpdateOnSubs();
     }
   }
 
-  SubscribeOnUpdate(cb: Callback): Callback {
+  public SubscribeOnUpdate(cb: Callback): Callback {
     let unsubAction = () => {
       this._subscribed = this._subscribed.filter(c => c != cb);
     }
@@ -30,36 +30,36 @@ export class CartService implements ICartService {
     return unsubAction;
   }
 
-  GetItemsCount(): number {
+  public GetItemsCount(): number {
     return cachItems.length;
   }
 
-  GetItems(): ICartItem[] {
+  public GetItems(): ICartItem[] {
     return cachItems;
   }
 
-  AddInCart(item: ShopProduct): void {
+  public AddInCart(item: ShopProduct): void {
     cachItems.push({ item: Object.assign({}, item), cartId: new Date().getTime() });
-    this.updateLocalStorage();
-    this.callUpdateOnSubs();
+    this._updateLocalStorage();
+    this._callUpdateOnSubs();
   }
 
-  Update(item: ICartItem): void {
+  public Update(item: ICartItem): void {
     cachItems.find(c => c.cartId == item.cartId).item = item.item;
-    this.updateLocalStorage();
-    this.callUpdateOnSubs();
+    this._updateLocalStorage();
+    this._callUpdateOnSubs();
   }
 
-  DeleteFromCart(item: ShopProduct): void {
+  public DeleteFromCart(item: ShopProduct): void {
     cachItems = cachItems.filter(f => f.item !== item);
-    this.updateLocalStorage();
-    this.callUpdateOnSubs();
+    this._updateLocalStorage();
+    this._callUpdateOnSubs();
   }
 
-  private updateLocalStorage(): void {
+  private _updateLocalStorage(): void {
     this.localStorage.setItem(CartService.cartKey, JSON.stringify(cachItems));
   }
-  private callUpdateOnSubs(): void {
+  private _callUpdateOnSubs(): void {
     this._subscribed.forEach(cb => cb());
   }
 }

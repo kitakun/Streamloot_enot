@@ -13,5 +13,4 @@ export class UserVisibleAttributePipe implements PipeTransform {
 
         return attributes.filter(flt => !flt.IsSystem);
     }
-
 }

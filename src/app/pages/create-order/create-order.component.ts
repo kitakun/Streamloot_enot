@@ -22,7 +22,6 @@ export class CreateOrderComponent implements OnInit {
 
   public showForm: boolean = true;
 
-
   //FORM
   public model: CreateOrderModel;
 
@@ -33,7 +32,6 @@ export class CreateOrderComponent implements OnInit {
 
   //FORM RESULT
   public redirectTo: string;
-
 
   constructor(
     private readonly orderService: OrdersService,
@@ -64,6 +62,7 @@ export class CreateOrderComponent implements OnInit {
           }
         }
       }
+
       return mmd;
     });
   }
@@ -95,5 +94,4 @@ export class CreateOrderComponent implements OnInit {
   public updateAddress(): void {
     this.model.Address.Address1 = `ул:${this.addrStreet} дом:${this.addrHome} кв:${this.addrApartament}`;
   }
-
 }
