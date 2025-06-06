@@ -8,7 +8,7 @@ import { DOCUMENT } from '@angular/common';
 })
 export class HoverParallaxComponent implements OnInit {
 
-  @ViewChild('parallazBgDiv') myDiv: ElementRef;
+  @ViewChild('parallazBgDiv', { static: false }) myDiv: ElementRef;
 
   constructor(@Inject(DOCUMENT) private document: Document) { }
 

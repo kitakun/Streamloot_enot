@@ -5,7 +5,7 @@ const jquery = (<any>jqueryProxy).default || jqueryProxy;
 
 
 import { timer } from 'rxjs';
-import { OnChanges } from '@angular/core/src/metadata/lifecycle_hooks';
+import { OnChanges } from '@angular/core';
 
 @Component({
   selector: 'carousel',
