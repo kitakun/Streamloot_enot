@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, Inject } from '@angular/core';
 import { ShopProduct } from 'src/app/Models/Products/ShopProduct';
-import { DOCUMENT } from '@angular/platform-browser';
+import { DOCUMENT } from '@angular/common';
 import { ShopProductsService } from 'src/app/services/shop-products.service';
 import { StaticbackgroundService } from 'src/app/services/staticbackground.service';
 import { CartService } from 'src/app/services/cart-service.service';
@@ -24,7 +24,7 @@ const choseAttributeModalName = 'select-attrs';
 })
 export class HomeComponent implements OnInit {
 
-  @ViewChild('carousel') carousel: any;
+  @ViewChild('carousel', { static: false }) carousel: any;
   slides: Array<ShopProduct> = []
   options: Object = {
     clicking: true,
