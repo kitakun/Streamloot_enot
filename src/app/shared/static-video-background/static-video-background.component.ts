@@ -12,7 +12,7 @@ export class StaticVideoBackgroundComponent implements OnInit, OnDestroy {
   public opacity: number;
   private _unsubscribe: Callback;
 
-  @ViewChild('vidos') vidos: ElementRef;
+  @ViewChild('vidos', { static: false }) vidos: ElementRef;
 
   constructor(private readonly staticService: StaticbackgroundService) { }
 
